@@ -1,10 +1,11 @@
 <h1>Casino</h1>
 <div style="text-align: center;">
-  <app-dado valor="{{ valor1 }}"></app-dado>
-  <app-dado valor="{{ valor2 }}"></app-dado>
-  <app-dado valor="{{ valor3 }}"></app-dado>
+  <app-dado valor="{{ valor1 }}" #dado1></app-dado>
+  <app-dado valor="{{ valor2 }}" #dado2></app-dado>
+  <app-dado valor="{{ valor3 }}" #dado3></app-dado>
+  <app-juego #juego></app-juego>
   <hr>
-  <button (click)="lanzar()">lanzar</button>
+  <button (click)="lanzar();juego.control(dado1.valor,dado2.valor,dado3.valor);juego.gano()">lanzar</button>
   <hr>
   <p>Resultado: {{resultado}}</p>
 </div>
